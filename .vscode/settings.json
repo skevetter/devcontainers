@@ -1,0 +1,103 @@
+{
+  // Editor
+  "editor.tabSize": 4,
+  "editor.fontSize": 18,
+  "editor.fontFamily": "'MesloLGS Nerd Font', 'FiraCode Nerd Font', 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": false,
+  // Terminal
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.scrollback": 100000,
+  "terminal.integrated.fontFamily": "'MesloLGS Nerd Font', 'FiraCode Nerd Font', 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "/usr/bin/zsh",
+      "args": ["-l", "-i"], // See https://github.com/microsoft/vscode/issues/143061
+      "env": {}
+    },
+    "bash": {
+      "path": "/bin/bash",
+      "args": ["-l"],
+      "env": {}
+    }
+  },
+  // Workbench
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 10, // Max editor tabs open
+  // Copilot
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  // Git
+  "git.autofetch": true,
+  "git.blame.editorDecoration.enabled": true,
+  // Diff Editor
+  "diffEditor.renderSideBySide": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  // Indent Rainbow
+  "indentRainbow.lightIndicatorStyleLineWidth": 4,
+  // Files
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 3000, // 3 seconds
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true
+  },
+  "files.exclude": {
+    "apollo-overrides": true,
+    "release-info": true,
+    "src/*/build": false,
+    "build": false,
+    "env": false,
+    "packageInfo*": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.Trash-1000": true
+  },
+  // Search
+  "search.exclude": {
+    "build": true,
+    "env": false,
+    "src/*/build": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
+  },
+  // Shell (Bash + Sh)
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.formatOnSave": true
+  },
+  // Python
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  },
+  // JSON
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  // Markdown
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.formatOnSave": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Devcontainer",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "features": {
+    "ghcr.io/devcontainers-extra/features/act:1": {},
+    "ghcr.io/devcontainers-extra/features/fzf:1": {},
+    "ghcr.io/devcontainers-extra/features/go-task:1": {},
+    "ghcr.io/devcontainers-extra/features/mise:1": {},
+    "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
+    "ghcr.io/skevetter/features/biome:1": {},
+    "ghcr.io/skevetter/features/lazygit:1": {},
+    "ghcr.io/skevetter/features/pre-commit-cache:1": {},
+    "ghcr.io/skevetter/features/shell-history:1": {},
+    "ghcr.io/skevetter/features/neovim:1": {}
+  },
+  "postCreateCommand": "bash .devcontainer/post_create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Catppuccin.catppuccin-vsc-icons",
+        "Catppuccin.catppuccin-vsc",
+        "charliermarsh.ruff",
+        "DavidAnson.vscode-markdownlint",
+        "EditorConfig.EditorConfig",
+        "elijah-potter.harper",
+        "esbenp.prettier-vscode",
+        "foxundermoon.shell-format",
+        "GitHub.copilot-chat",
+        "GitHub.copilot",
+        "mhutchie.git-graph",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode.makefile-tools",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces",
+        "VisualStudioExptTeam.intellicode-api-usage-examples",
+        "VisualStudioExptTeam.vscodeintellicode-completions",
+        "VisualStudioExptTeam.vscodeintellicode"
+      ]
+    }
+  }
+}
