@@ -1,0 +1,22 @@
+name: Build Devcontainer Image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  get-runner:
+    uses: skevetter/workflows/.github/workflows/get-runner.yml@main
+
+  build:
+    needs: get-runner
+    runs-on: ${{ needs.get-runner.outputs.runner }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Publish Features
+        uses: devcontainers/action@v1
+        with:
+          publish-templates: "false"
+          base-path-to-templates: "./src"
+          generate-docs: "true"
+          oci-registry: "docker.io"
