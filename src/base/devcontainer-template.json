@@ -2,6 +2,6 @@
   "id": "base",
   "version": "1.0.0",
   "name": "Base",
-  "description": "A minimal dev container.",
+  "description": "A minimal dev container",
   "optionalPaths": [".github/*"]
 }

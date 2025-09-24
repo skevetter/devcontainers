@@ -1,0 +1,32 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      templates: ${{ steps.filter.outputs.changes }}
+    steps:
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            color: ./**/color/**
+            hello: ./**/hello/**
+            base: ./**/base/**
+
+  test:
+    needs: [changes]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        templates: ${{ fromJSON(needs.changes.outputs.templates) }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Smoke test for '${{ matrix.templates }}'
+        uses: ./.github/actions/smoke-test
+        with:
+          template: "${{ matrix.templates }}"

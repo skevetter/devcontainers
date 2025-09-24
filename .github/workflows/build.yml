@@ -2,7 +2,6 @@ name: Build Devcontainer Image
 
 on:
   workflow_dispatch:
-  push:
 
 jobs:
   build:
@@ -16,11 +15,11 @@ jobs:
 
       - uses: devcontainers/ci@v0.3
         with:
-          subFolder: ./src/debian
+          subFolder: ./src/base
 
       - name: Publish Features
         uses: devcontainers/action@v1
         with:
-          publish-templates: "false"
+          publish-templates: "true"
           base-path-to-templates: "./src"
           generate-docs: "true"

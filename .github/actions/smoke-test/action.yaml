@@ -1,0 +1,25 @@
+name: Smoke Test
+description: Build and test a dev container template
+
+inputs:
+  template:
+    description: Template to test
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v5
+
+    - uses: actions/setup-python@v6
+      with:
+        python-version: 3.x
+
+    - name: Build
+      id: build
+      shell: python
+      run: ${{ github.action_path }}/smoke.py build ${{ inputs.template }}
+
+    - name: Test
+      shell: python
+      run: ${{ github.action_path }}/smoke.py test ${{ inputs.template }} --tmpdir ${{ steps.build.outputs.workspace }}
