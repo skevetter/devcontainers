@@ -2,10 +2,7 @@
   "name": "Devcontainer",
   "build": {
     "dockerfile": "./Dockerfile",
-    "context": ".",
-    "args": {
-      "VARIANT": "${templateOption:imageVariant}"
-    }
+    "context": "."
   },
   "features": {
     "ghcr.io/skevetter/features/neovim:1": {},
