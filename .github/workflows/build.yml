@@ -5,13 +5,8 @@ on:
   push:
 
 jobs:
-  get-runner:
-    uses: skevetter/workflows/.github/workflows/get-runner.yml@main
-    secrets: inherit
-
   build:
-    needs: get-runner
-    runs-on: ${{ needs.get-runner.outputs.runner }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
 
