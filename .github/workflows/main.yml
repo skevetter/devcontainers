@@ -6,6 +6,7 @@ on:
 jobs:
   get-runner:
     uses: skevetter/workflows/.github/workflows/get-runner.yml@main
+    secrets: inherit
 
   build:
     needs: get-runner
@@ -19,4 +20,3 @@ jobs:
           publish-templates: "false"
           base-path-to-templates: "./src"
           generate-docs: "true"
-          oci-registry: "docker.io"
