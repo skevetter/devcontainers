@@ -15,6 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "latest"
+
       - uses: devcontainers/ci@v0.3
         with:
           subFolder: ./src/debian
