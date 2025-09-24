@@ -2,6 +2,7 @@ name: Build Devcontainer Image
 
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   get-runner:
@@ -13,6 +14,10 @@ jobs:
     runs-on: ${{ needs.get-runner.outputs.runner }}
     steps:
       - uses: actions/checkout@v5
+
+      - uses: devcontainers/ci@v0.3
+        with:
+          subFolder: ./src/debian
 
       - name: Publish Features
         uses: devcontainers/action@v1
