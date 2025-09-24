@@ -17,9 +17,9 @@ runs:
 
     - name: Build
       id: build
-      shell: python
+      shell: bash
       run: ${{ github.action_path }}/smoke.py build ${{ inputs.template }}
 
     - name: Test
-      shell: python
+      shell: bash
       run: ${{ github.action_path }}/smoke.py test ${{ inputs.template }} --tmpdir ${{ steps.build.outputs.workspace }}
