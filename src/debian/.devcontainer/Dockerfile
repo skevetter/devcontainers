@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:trixie
+FROM mcr.microsoft.com/devcontainers/base:${VARIANT}
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV USERNAME=vscode
