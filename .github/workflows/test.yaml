@@ -9,13 +9,18 @@ jobs:
     outputs:
       templates: ${{ steps.filter.outputs.changes }}
     steps:
+      - uses: actions/checkout@v5
+
       - uses: dorny/paths-filter@v3
         id: filter
         with:
           filters: |
-            color: ./**/color/**
-            hello: ./**/hello/**
-            base: ./**/base/**
+            color:
+              - './**/color/**'
+            hello:
+              - './**/hello/**'
+            base:
+              - './**/base/**'
 
   test:
     needs: [changes]
