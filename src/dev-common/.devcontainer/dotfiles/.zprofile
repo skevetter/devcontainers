@@ -63,6 +63,8 @@ main() {
     load_profile
     load_oh_my_zsh
 
+    INITIALIZED_ZPROFILE=1
+
     zstyle ':completion:\*' menu select
 
     if [ -f "${ZSH}/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ]; then

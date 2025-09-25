@@ -1,3 +1,7 @@
+if [[ "${INITIALIZED_ZPROFILE}" != "1" ]] && [[ -f "${HOME}/.zprofile" ]]; then
+    source "${HOME}/.zprofile"
+fi
+
 if [ -f "$HOME/.config/starship/starship.toml" ]; then
     export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 fi
