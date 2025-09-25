@@ -8,16 +8,11 @@
     "ghcr.io/skevetter/features/neovim:1": {},
     "ghcr.io/skevetter/features/shell-history:1": {}
   },
-  "postCreateCommand": ".devcontainer/post_create.sh",
   "customizations": {
     "vscode": {
       "extensions": [
         "Catppuccin.catppuccin-vsc-icons",
         "Catppuccin.catppuccin-vsc",
-        "elijah-potter.harper",
-        "esbenp.prettier-vscode",
-        "GitHub.copilot-chat",
-        "GitHub.copilot",
         "mhutchie.git-graph",
         "oderwat.indent-rainbow",
         "shardulm94.trailing-spaces"

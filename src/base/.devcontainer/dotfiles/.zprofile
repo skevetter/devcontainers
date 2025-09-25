@@ -72,7 +72,6 @@ main() {
         autoload -Uz compinit && compinit
     fi
 
-
     if command -v mise &>/dev/null; then
         eval "$(mise activate "$(basename "${SHELL}")")"
     fi
