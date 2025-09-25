@@ -1,6 +1,11 @@
-name: Test
+name: Test and Push Devcontainer Images
 
 on:
+  push:
+    paths:
+      - ".github/workflows/test-and-push.yaml"
+      - "src/**"
+      - "test/**"
   workflow_dispatch:
 
 jobs:
@@ -35,3 +40,19 @@ jobs:
         uses: ./.github/actions/smoke-test
         with:
           template: "${{ matrix.templates }}"
+
+  push:
+    needs: [changes, test]
+    if: ${{ needs.test.result == 'success' }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        templates: ${{ fromJSON(needs.changes.outputs.templates) }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Push image for '${{ matrix.templates }}'
+        uses: ./.github/actions/push-image
+        with:
+          template: "${{ matrix.templates }}"
+          token: "${{ secrets.GITHUB_TOKEN }}"
