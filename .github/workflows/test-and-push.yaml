@@ -30,6 +30,8 @@ jobs:
               - './**/hello/**'
             base:
               - './**/base/**'
+            dev-common:
+              - './**/dev-common/**'
 
   test:
     needs: [changes]

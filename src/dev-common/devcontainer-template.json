@@ -1,0 +1,7 @@
+{
+  "id": "dev-common",
+  "version": "1.0.0",
+  "name": "Dev Common",
+  "description": "A minimal dev container",
+  "documentationURL": "https://github.com/skevetter/devcontainers/tree/main/src/dev-common"
+}
