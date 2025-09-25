@@ -14,23 +14,13 @@
       "extensions": [
         "Catppuccin.catppuccin-vsc-icons",
         "Catppuccin.catppuccin-vsc",
-        "charliermarsh.ruff",
-        "DavidAnson.vscode-markdownlint",
-        "EditorConfig.EditorConfig",
         "elijah-potter.harper",
         "esbenp.prettier-vscode",
-        "foxundermoon.shell-format",
         "GitHub.copilot-chat",
         "GitHub.copilot",
         "mhutchie.git-graph",
-        "ms-azuretools.vscode-docker",
-        "ms-vscode-remote.remote-containers",
-        "ms-vscode.makefile-tools",
         "oderwat.indent-rainbow",
-        "shardulm94.trailing-spaces",
-        "VisualStudioExptTeam.intellicode-api-usage-examples",
-        "VisualStudioExptTeam.vscodeintellicode-completions",
-        "VisualStudioExptTeam.vscodeintellicode"
+        "shardulm94.trailing-spaces"
       ]
     }
   }
