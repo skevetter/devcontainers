@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "name": "My Favorite Color",
   "description": "A Template to remind you of your favorite color",
-  "documentationURL": "https://github.com/devcontainers/template-starter/tree/main/src/color",
-  "licenseURL": "https://github.com/devcontainers/template-starter/blob/main/LICENSE",
+  "documentationURL": "https://github.com/skevetter/devcontainers/tree/main/src/color",
   "options": {
     "imageVariant": {
       "type": "string",
