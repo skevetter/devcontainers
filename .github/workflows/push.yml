@@ -3,10 +3,10 @@ name: Push Devcontainer Image
 on:
   workflow_dispatch:
     inputs:
-      folder:
+      template:
         description: Name of folder containing the devcontainer
         required: true
-        default: ".github"
+        type: string
 
 permissions:
   contents: read
@@ -16,22 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-
-      - uses: actions/setup-node@v5
+      - name: Push image for '${{ github.event.inputs.template }}'
+        uses: ./.github/actions/push-image
         with:
-          node-version: "latest"
-
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: devcontainers/ci@v0.3
-        with:
-          subFolder: ${{ github.event.inputs.folder }}
-          imageName: ghcr.io/${{ github.repository_owner }}/${{ github.event.inputs.folder }}
-          cacheFrom: ghcr.io/${{ github.repository_owner }}/${{ github.event.inputs.folder }}
-          push: always
+          template: "${{ github.event.inputs.template }}"
