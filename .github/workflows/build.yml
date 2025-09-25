@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       folder:
-        description: "filterolder containing the devcontainer"
+        description: Name of folder containing the devcontainer
         required: true
         default: ".github"
 
@@ -32,6 +32,6 @@ jobs:
       - uses: devcontainers/ci@v0.3
         with:
           subFolder: ${{ github.event.inputs.folder }}
-          imageName: ghcr.io/${{ github.repository }}
-          cacheFrom: ghcr.io/${{ github.repository }}
+          imageName: ghcr.io/${{ github.repository_owner }}/${{ github.event.inputs.folder }}:latest
+          cacheFrom: ghcr.io/${{ github.repository_owner }}/${{ github.event.inputs.folder }}:latest
           push: always
