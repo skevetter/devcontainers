@@ -8,6 +8,10 @@ on:
         required: true
         default: ".github"
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
