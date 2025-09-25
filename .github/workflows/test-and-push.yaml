@@ -8,6 +8,10 @@ on:
       - "test/**"
   workflow_dispatch:
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   changes:
     runs-on: ubuntu-latest
