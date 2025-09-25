@@ -34,6 +34,7 @@ jobs:
   test:
     needs: [changes]
     runs-on: ubuntu-latest
+    if: ${{ needs.changes.outputs.templates != '[]' }}
     strategy:
       matrix:
         templates: ${{ fromJSON(needs.changes.outputs.templates) }}
