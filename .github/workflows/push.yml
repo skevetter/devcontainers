@@ -1,4 +1,4 @@
-name: Build Devcontainer Image
+name: Push Devcontainer Image
 
 on:
   workflow_dispatch:
@@ -32,6 +32,6 @@ jobs:
       - uses: devcontainers/ci@v0.3
         with:
           subFolder: ${{ github.event.inputs.folder }}
-          imageName: ghcr.io/${{ github.repository_owner }}/${{ github.event.inputs.folder }}:latest
-          cacheFrom: ghcr.io/${{ github.repository_owner }}/${{ github.event.inputs.folder }}:latest
+          imageName: ghcr.io/${{ github.repository_owner }}/${{ github.event.inputs.folder }}
+          cacheFrom: ghcr.io/${{ github.repository_owner }}/${{ github.event.inputs.folder }}
           push: always
