@@ -23,6 +23,7 @@
     "ghcr.io/skevetter/features/lazygit:1": {},
     "ghcr.io/skevetter/features/neovim:1": {},
     "ghcr.io/skevetter/features/pre-commit-cache:1": {},
+    "ghcr.io/skevetter/features/pre-commit-load-common-hooks:1": {},
     "ghcr.io/skevetter/features/pulumi:1": {},
     "ghcr.io/skevetter/features/shell-history:1": {}
   },
@@ -44,10 +45,7 @@
         "ms-vscode-remote.remote-containers",
         "ms-vscode.makefile-tools",
         "oderwat.indent-rainbow",
-        "shardulm94.trailing-spaces",
-        "VisualStudioExptTeam.intellicode-api-usage-examples",
-        "VisualStudioExptTeam.vscodeintellicode-completions",
-        "VisualStudioExptTeam.vscodeintellicode"
+        "shardulm94.trailing-spaces"
       ]
     }
   }
