@@ -19,7 +19,6 @@
     "ghcr.io/devcontainers/features/rust:1": {},
     "ghcr.io/devcontainers/features/terraform:1": {},
     "ghcr.io/skevetter/features/biome:1": {},
-    "ghcr.io/skevetter/features/gpg-hack:1": {},
     "ghcr.io/skevetter/features/lazygit:1": {},
     "ghcr.io/skevetter/features/neovim:1": {},
     "ghcr.io/skevetter/features/pre-commit-cache:1": {},
