@@ -24,7 +24,8 @@
     "ghcr.io/skevetter/features/pre-commit-cache:1": {},
     "ghcr.io/skevetter/features/pre-commit-load-common-hooks:1": {},
     "ghcr.io/skevetter/features/pulumi:1": {},
-    "ghcr.io/skevetter/features/shell-history:1": {}
+    "ghcr.io/skevetter/features/shell-history:1": {},
+    "ghcr.io/skevetter/features/shfmt:1": {}
   },
   "customizations": {
     "vscode": {
