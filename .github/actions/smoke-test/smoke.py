@@ -13,7 +13,7 @@ test/
 └── <template-id>/
     └── test.sh
 └── utils/
-    └── utils.sh
+    └── test-utils.sh
 
 ================================
 Destination in the built container
