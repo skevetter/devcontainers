@@ -1,7 +1,7 @@
 
 # Dev Common (dev-common)
 
-A minimal dev container
+A dev container with common tools and utilities for development.
 
 
 
