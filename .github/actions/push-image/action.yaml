@@ -30,5 +30,4 @@ runs:
       with:
         subFolder: src/${{ inputs.template }}
         imageName: ghcr.io/${{ github.repository_owner }}/${{ inputs.template }}
-        cacheFrom: ghcr.io/${{ github.repository_owner }}/${{ inputs.template }}
         push: always
