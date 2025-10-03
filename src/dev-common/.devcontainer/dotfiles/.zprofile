@@ -65,17 +65,15 @@ main() {
 
     INITIALIZED_ZPROFILE=1
 
-    zstyle ':completion:\*' menu select
+    zstyle ':completion:*' menu select
+    zstyle ':autocomplete:*' delay 0.5
+    zstyle ':autocomplete:*' min-input 3
 
     if [ -f "${ZSH}/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ]; then
         source "${ZSH}/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
     else
         autoload bashcompinit && bashcompinit
         autoload -Uz compinit && compinit
-    fi
-
-    if command -v mise &>/dev/null; then
-        eval "$(mise activate "$(basename "${SHELL}")")"
     fi
 
     if command -v fzf &>/dev/null; then
