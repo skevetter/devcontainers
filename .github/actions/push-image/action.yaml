@@ -26,8 +26,21 @@ runs:
         username: ${{ github.actor }}
         password: ${{ inputs.token }}
 
+    - name: Copy devcontainer dotfiles
+      shell: bash
+      run: |
+        if [ -d "src/${{ inputs.template }}/.devcontainer/dotfiles" ]; then
+          echo "Using local dotfiles..."
+          exit 0
+        fi
+
+        echo "Using shared dotfiles..."
+        mkdir -p src/${{ inputs.template }}/.devcontainer
+        cp -R dotfiles src/${{ inputs.template }}/.devcontainer/
+
     - uses: devcontainers/ci@v0.3
       with:
         subFolder: src/${{ inputs.template }}
         imageName: ghcr.io/${{ github.repository_owner }}/${{ inputs.template }}
+        cacheFrom: ghcr.io/${{ github.repository_owner }}/${{ inputs.template }}
         push: always

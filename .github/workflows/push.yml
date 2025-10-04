@@ -1,6 +1,15 @@
 name: Push Devcontainer Image
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/push.yml"
+      - "src/**"
+      - "test/**"
+  schedule:
+    - cron: "0 18 * * *" # Daily at 1800 UTC
   workflow_dispatch:
     inputs:
       template:
@@ -13,8 +22,46 @@ permissions:
   packages: write
 
 jobs:
-  build:
+  changes:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    outputs:
+      templates: ${{ steps.filter.outputs.changes }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            color:
+              - './**/color/**'
+            hello:
+              - './**/hello/**'
+            base:
+              - './**/base/**'
+            dev-common:
+              - './**/dev-common/**'
+
+  build-changed:
+    runs-on: ubuntu-latest
+    needs: changes
+    if: github.event_name == 'push' && needs.changes.outputs.templates != '[]'
+    strategy:
+      matrix:
+        template: ${{ fromJSON(needs.changes.outputs.templates) }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Push image for '${{ matrix.template }}'
+        uses: ./.github/actions/push-image
+        with:
+          template: "${{ matrix.template }}"
+          token: "${{ secrets.GITHUB_TOKEN }}"
+
+  build-dispatch:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v5
 
@@ -22,4 +69,23 @@ jobs:
         uses: ./.github/actions/push-image
         with:
           template: "${{ github.event.inputs.template }}"
+          token: "${{ secrets.GITHUB_TOKEN }}"
+
+  build-all:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    strategy:
+      matrix:
+        template:
+          - base
+          - color
+          - dev-common
+          - hello
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Push image for '${{ matrix.template }}'
+        uses: ./.github/actions/push-image
+        with:
+          template: "${{ matrix.template }}"
           token: "${{ secrets.GITHUB_TOKEN }}"
