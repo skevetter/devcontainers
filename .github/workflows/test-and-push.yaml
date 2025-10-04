@@ -32,6 +32,8 @@ jobs:
               - './**/base/**'
             dev-common:
               - './**/dev-common/**'
+            devcontainers:
+              - './**/devcontainers/**'
 
   test:
     needs: [changes]

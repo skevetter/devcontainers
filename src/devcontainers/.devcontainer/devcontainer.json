@@ -1,0 +1,37 @@
+{
+  "name": "Devcontainer",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "features": {
+    "ghcr.io/devcontainers-extra/features/act:1": {},
+    "ghcr.io/devcontainers-extra/features/devcontainers-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/fzf:1": {},
+    "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": { "moby": false },
+    "ghcr.io/skevetter/features/biome:1": {},
+    "ghcr.io/skevetter/features/lazygit:1": {},
+    "ghcr.io/skevetter/features/neovim:1": {},
+    "ghcr.io/skevetter/features/pre-commit-cache:1": {},
+    "ghcr.io/skevetter/features/pre-commit-load-common-hooks:1": {},
+    "ghcr.io/skevetter/features/shell-history:1": {},
+    "ghcr.io/skevetter/features/shfmt:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Catppuccin.catppuccin-vsc-icons",
+        "Catppuccin.catppuccin-vsc",
+        "EditorConfig.EditorConfig",
+        "elijah-potter.harper",
+        "esbenp.prettier-vscode",
+        "GitHub.copilot-chat",
+        "GitHub.copilot",
+        "mhutchie.git-graph",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces"
+      ]
+    }
+  }
+}
