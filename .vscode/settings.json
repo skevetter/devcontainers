@@ -5,8 +5,6 @@
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.scrollback": 100000,
   "terminal.integrated.fontFamily": "'MesloLGS Nerd Font', 'FiraCode Nerd Font', 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
-  "workbench.colorTheme": "Catppuccin Macchiato",
-  "workbench.iconTheme": "catppuccin-macchiato",
   "git.autofetch": true,
   "git.blame.editorDecoration.enabled": true,
   "diffEditor.renderSideBySide": false,
