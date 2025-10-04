@@ -15,6 +15,18 @@ runs:
       with:
         python-version: 3.x
 
+    - name: Setup devcontainer dotfiles
+      shell: bash
+      run: |
+        if [ -d "src/${{ inputs.template }}/.devcontainer/dotfiles" ]; then
+          echo "Using local dotfiles..."
+          exit 0
+        fi
+
+        echo "Using shared dotfiles..."
+        mkdir -p src/${{ inputs.template }}/.devcontainer
+        cp -R dotfiles src/${{ inputs.template }}/.devcontainer/
+
     - name: Build
       id: build
       shell: bash
