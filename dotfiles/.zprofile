@@ -75,10 +75,6 @@ main() {
         autoload bashcompinit && bashcompinit
         autoload -Uz compinit && compinit
     fi
-
-    if command -v fzf &>/dev/null; then
-        source <(fzf --zsh)
-    fi
 }
 
 main
