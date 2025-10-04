@@ -10,6 +10,7 @@
     "ghcr.io/devcontainers-extra/features/fzf:1": {},
     "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": { "moby": false },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/skevetter/features/biome:1": {},
     "ghcr.io/skevetter/features/lazygit:1": {},
     "ghcr.io/skevetter/features/neovim:1": {},
