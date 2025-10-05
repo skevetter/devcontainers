@@ -1,0 +1,7 @@
+{
+  "id": "picolayer",
+  "version": "1.0.0",
+  "name": "Picolayer",
+  "description": "A dev container with common tools and utilities for development.",
+  "documentationURL": "https://github.com/skevetter/devcontainers/tree/main/src/picolayer"
+}

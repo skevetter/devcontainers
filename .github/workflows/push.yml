@@ -18,6 +18,7 @@ jobs:
           - base
           - dev-common
           - devcontainers
+          - picolayer
     steps:
       - uses: actions/checkout@v5
 

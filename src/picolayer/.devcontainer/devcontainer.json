@@ -1,0 +1,29 @@
+{
+  "name": "Devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/rust:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": { "moby": false },
+    "ghcr.io/skevetter/features/biome:1": {},
+    "ghcr.io/skevetter/features/catppuccin:1": {},
+    "ghcr.io/skevetter/features/fzf:1": {},
+    "ghcr.io/skevetter/features/lazygit:1": {},
+    "ghcr.io/skevetter/features/neovim:1": {},
+    "ghcr.io/skevetter/features/pre-commit-cache:1": {},
+    "ghcr.io/skevetter/features/shell-history:1": {},
+    "ghcr.io/skevetter/features/shfmt:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "elijah-potter.harper",
+        "esbenp.prettier-vscode",
+        "GitHub.copilot-chat",
+        "GitHub.copilot",
+        "mhutchie.git-graph",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces"
+      ]
+    }
+  }
+}

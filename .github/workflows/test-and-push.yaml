@@ -34,6 +34,8 @@ jobs:
               - './**/dev-common/**'
             devcontainers:
               - './**/devcontainers/**'
+            picolayer:
+              - './**/picolayer/**'
 
   test:
     needs: [changes]
