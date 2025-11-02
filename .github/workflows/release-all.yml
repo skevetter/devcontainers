@@ -8,7 +8,7 @@ permissions:
   packages: write
 
 jobs:
-  build-all:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
