@@ -1,4 +1,6 @@
-FROM mcr.microsoft.com/devcontainers/base:${templateOption:imageVariant}
+ARG VARIANT="jammy"
+FROM mcr.microsoft.com/devcontainers/base:${VARIANT}
 
+ARG GREETING="hey"
 RUN mkdir -p /usr/local/etc \
-    && echo "${templateOption:greeting}" > /usr/local/etc/greeting.txt
+    && echo "${GREETING}" > /usr/local/etc/greeting.txt

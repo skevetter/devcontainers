@@ -1,7 +1,11 @@
 {
   "name": "Hello, World",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile",
+    "args": {
+      "VARIANT": "${templateOption:imageVariant}",
+      "GREETING": "${templateOption:greeting}"
+    }
   },
 
   // 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
