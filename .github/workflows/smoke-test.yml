@@ -1,0 +1,19 @@
+name: Smoke Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      template:
+        description: "Template"
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Smoke test for '${{ github.event.inputs.template }}'
+        uses: ./.github/actions/smoke-test
+        with:
+          template: "${{ github.event.inputs.template }}"
