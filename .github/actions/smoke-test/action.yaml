@@ -19,11 +19,11 @@ runs:
       shell: bash
       run: |
         if [ -d "src/${{ inputs.template }}/.devcontainer/dotfiles" ]; then
-          echo "Using local dotfiles..."
+          echo "Using local dotfiles"
           exit 0
         fi
 
-        echo "Using shared dotfiles..."
+        echo "Using shared dotfiles"
         mkdir -p src/${{ inputs.template }}/.devcontainer
         cp -R dotfiles src/${{ inputs.template }}/.devcontainer/
 

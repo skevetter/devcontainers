@@ -12,6 +12,7 @@
     "ghcr.io/skevetter/features/shell-history:1": {},
     "ghcr.io/skevetter/features/shfmt:1": {}
   },
+  "postCreateCommand": "sudo chown -R vscode:rustlang /usr/local/cargo/registry && sudo chmod -R g+w /usr/local/cargo/registry",
   "customizations": {
     "vscode": {
       "extensions": [
