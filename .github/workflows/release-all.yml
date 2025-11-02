@@ -1,4 +1,4 @@
-name: Build All Containers
+name: Build and Push All
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        templates: [color, hello, base, dev-common, devcontainers, picolayer]
+        templates: [base, dev-common, devcontainers, picolayer]
     steps:
       - uses: actions/checkout@v5
 
