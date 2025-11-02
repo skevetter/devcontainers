@@ -6,7 +6,6 @@ on:
       - ".github/workflows/test-and-push.yaml"
       - "src/**"
       - "test/**"
-  workflow_dispatch:
 
 permissions:
   contents: read
