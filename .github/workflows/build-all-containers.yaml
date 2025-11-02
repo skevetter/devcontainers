@@ -1,0 +1,28 @@
+name: Build All Containers
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-all:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        templates: [color, hello, base, dev-common, devcontainers, picolayer]
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Smoke test for '${{ matrix.templates }}'
+        uses: ./.github/actions/smoke-test
+        with:
+          template: "${{ matrix.templates }}"
+
+      - name: Push image for '${{ matrix.templates }}'
+        uses: ./.github/actions/push-image
+        with:
+          template: "${{ matrix.templates }}"
+          token: "${{ secrets.GITHUB_TOKEN }}"
