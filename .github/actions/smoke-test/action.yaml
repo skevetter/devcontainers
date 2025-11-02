@@ -31,7 +31,11 @@ runs:
       id: build
       shell: bash
       run: ${{ github.action_path }}/smoke.py build ${{ inputs.template }}
+      env:
+        PICOLAYER_LOG_LEVEL: debug
 
     - name: Test
       shell: bash
       run: ${{ github.action_path }}/smoke.py test ${{ inputs.template }} --tmpdir ${{ steps.build.outputs.workspace }}
+      env:
+        PICOLAYER_LOG_LEVEL: debug
