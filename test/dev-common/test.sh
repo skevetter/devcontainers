@@ -103,6 +103,10 @@ test_command_version wrangler
 test_command_exists pulumi
 test_command_version pulumi
 
+# Github CLI
+test_command_exists gh
+test_command_version gh
+
 #------------------------------------------------------------------------------
 # Development Environment
 #------------------------------------------------------------------------------
