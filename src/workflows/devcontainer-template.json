@@ -1,0 +1,7 @@
+{
+  "id": "workflows",
+  "version": "1.0.0",
+  "name": "workflows",
+  "description": "A dev container with for the workflows repository",
+  "documentationURL": "https://github.com/skevetter/devcontainers/tree/main/src/workflows"
+}
