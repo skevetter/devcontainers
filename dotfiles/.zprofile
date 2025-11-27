@@ -66,7 +66,7 @@ main() {
     INITIALIZED_ZPROFILE=1
 
     zstyle ':completion:*' menu select
-    zstyle ':autocomplete:*' delay 0.5
+    zstyle ':autocomplete:*' delay 0.9
     zstyle ':autocomplete:*' min-input 3
 
     if [ -f "${ZSH}/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ]; then
