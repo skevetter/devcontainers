@@ -1,4 +1,4 @@
 {
   "image": "ghcr.io/skevetter/devcontainers:latest",
-  "postCreateCommand": ".devcontainer/post_create.sh"
+  "postCreateCommand": "sh -c 'if command -v pre-commit >/dev/null 2>&1; then pre-commit install --install-hooks || echo \"pre-commit install failed\"; else echo \"pre-commit not installed, skipping\"; fi'"
 }
