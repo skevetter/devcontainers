@@ -4,9 +4,7 @@
     "dockerfile": "./Dockerfile",
     "context": "."
   },
-  "postCreateCommand": [
-    "pre-commit install --install-hooks || { echo 'pre-commit installation failed'; }"
-  ],
+  "postCreateCommand": "sh -c 'pre-commit install --install-hooks || echo \"pre-commit installation failed\"'",
   "features": {
     "ghcr.io/devcontainers-extra/features/act:1": {},
     "ghcr.io/devcontainers-extra/features/cloudflare-wrangler:1": {},
