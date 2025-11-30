@@ -1,6 +1,6 @@
 {
   "id": "dev-common",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "Dev Common",
   "description": "A dev container with common tools and utilities for development.",
   "documentationURL": "https://github.com/skevetter/devcontainers/tree/main/src/dev-common"
