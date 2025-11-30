@@ -17,6 +17,7 @@ jobs:
         template:
           - base
           - dev-common
+          - devpod
           - devcontainers
           - picolayer
     steps:
