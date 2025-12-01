@@ -302,28 +302,43 @@ def exec_build_action(
 def exec_test_action(workspace_dir: str, template_id: str) -> None:
     devcontainer = shutil.which("devcontainer") or "devcontainer"
 
-    dev_container_execution_status = run(
-        [
-            devcontainer,
-            "exec",
-            "--workspace-folder",
-            workspace_dir,
-            "--id-label",
-            f"{SMOKE_LABEL}={template_id}",
-            "/bin/sh",
-            "-c",
-            f"if [ -f {SMOKE_DIRECTORY}/{SMOKE_FILE} ]; then chmod +x {SMOKE_DIRECTORY}/{SMOKE_FILE} && {SMOKE_DIRECTORY}/{SMOKE_FILE}; else echo 'No tests to run'; fi",
-        ]
-    )
+    cmd = [
+        devcontainer,
+        "exec",
+        "--workspace-folder",
+        workspace_dir,
+        "--id-label",
+        f"{SMOKE_LABEL}={template_id}",
+        "/bin/sh",
+        "-c",
+        f"if [ -f {SMOKE_DIRECTORY}/{SMOKE_FILE} ]; then chmod +x {SMOKE_DIRECTORY}/{SMOKE_FILE} && {SMOKE_DIRECTORY}/{SMOKE_FILE}; else echo 'No tests to run'; fi",
+    ]
 
-    if (
-        not dev_container_execution_status
-        or "No such container" in dev_container_execution_status
-    ):
+    logger.debug(f"Running: {' '.join(cmd)}")
+    try:
+        result = subprocess.run(
+            cmd,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        output = result.stdout.strip() if result.stdout else ""
+        if output:
+            print(output)
+
+    except subprocess.CalledProcessError as e:
         logger.error("Tests failed inside the Dev Container")
-        raise ActionBuildError("Tests failed inside the Dev Container")
-
-    print(dev_container_execution_status)
+        logger.error(f"Exit code: {e.returncode}")
+        if e.stdout:
+            logger.error("STDOUT:")
+            logger.error(e.stdout)
+        if e.stderr:
+            logger.error("STDERR:")
+            logger.error(e.stderr)
+        raise ActionBuildError(f"Tests failed inside the Dev Container with exit code {e.returncode}")
+    except FileNotFoundError:
+        logger.error(f"Command not found: {cmd[0]}")
+        raise ActionBuildError(f"Command not found: {cmd[0]}")
 
     cleanup_docker_containers(template_id)
 

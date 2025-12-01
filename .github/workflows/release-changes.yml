@@ -31,6 +31,8 @@ jobs:
               - './**/base/**'
             dev-common:
               - './**/dev-common/**'
+            devpod:
+              - './**/devpod/**'
             devcontainers:
               - './**/devcontainers/**'
             picolayer:

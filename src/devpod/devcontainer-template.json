@@ -1,6 +1,6 @@
 {
   "id": "devpod",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "DevPod",
   "description": "A dev container with tools and utilities for development on DevPod",
   "documentationURL": "https://github.com/skevetter/devcontainers/tree/main/src/devpod"
