@@ -17,7 +17,7 @@ jobs:
     outputs:
       templates: ${{ steps.filter.outputs.changes }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: dorny/paths-filter@v3
         id: filter
@@ -46,7 +46,7 @@ jobs:
       matrix:
         templates: ${{ fromJSON(needs.changes.outputs.templates) }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Smoke test for '${{ matrix.templates }}'
         uses: ./.github/actions/smoke-test
@@ -61,7 +61,7 @@ jobs:
       matrix:
         templates: ${{ fromJSON(needs.changes.outputs.templates) }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Push image for '${{ matrix.templates }}'
         uses: ./.github/actions/push-image

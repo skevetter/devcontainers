@@ -21,7 +21,7 @@ jobs:
           - devcontainers
           - picolayer
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       # TODO: Templates that use options (e.g., the 'hello' template) fail because this action
       # does not support passing options to the build. Alternative solutions are
