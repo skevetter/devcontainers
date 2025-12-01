@@ -95,6 +95,14 @@ test_command_version shfmt
 test_command_exists protoc
 test_command_version protoc
 
+# Ginkgo (Go testing framework)
+test_command_exists ginkgo
+test_command_version ginkgo
+
+# Goimports (Go imports formatter)
+test_command_exists goimports
+check_quiet "goimports help works" goimports -h
+
 #------------------------------------------------------------------------------
 # Permissions and Environment
 #------------------------------------------------------------------------------
