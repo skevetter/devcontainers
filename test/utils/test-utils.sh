@@ -69,6 +69,9 @@ test_command_version() {
         pulumi)
             check_quiet "$cmd version works" pulumi version
             ;;
+        ginkgo)
+            check_quiet "$cmd version works" ginkgo version
+            ;;
         *)
             check_quiet "$cmd version works" "$cmd" --version
             ;;
