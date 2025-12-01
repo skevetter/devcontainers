@@ -1,0 +1,50 @@
+version: "3"
+
+tasks:
+  test:
+    desc: Run smoke tests for a specific template using act
+    vars:
+      TEMPLATE: '{{.TEMPLATE | default "picolayer"}}'
+    cmds:
+      - act workflow_dispatch -W .github/workflows/test-single.yml --input template={{.TEMPLATE}}
+
+  test:picolayer:
+    desc: Run smoke tests for picolayer template
+    cmds:
+      - task: test
+        vars:
+          TEMPLATE: picolayer
+
+  test:devcontainers:
+    desc: Run smoke tests for devcontainers template
+    cmds:
+      - task: test
+        vars:
+          TEMPLATE: devcontainers
+
+  test:dev-common:
+    desc: Run smoke tests for dev-common template
+    cmds:
+      - task: test
+        vars:
+          TEMPLATE: dev-common
+
+  test:devpod:
+    desc: Run smoke tests for dev-common template
+    cmds:
+      - task: test
+        vars:
+          TEMPLATE: devpod
+
+  test:all:
+    desc: Run smoke tests for all templates
+    cmds:
+      - task: test:picolayer
+      - task: test:devcontainers
+      - task: test:dev-common
+      - task: test:devpod
+
+  list:
+    desc: List available workflows
+    cmds:
+      - act -l -W .github/workflows/
