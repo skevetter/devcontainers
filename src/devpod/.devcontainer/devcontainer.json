@@ -4,11 +4,11 @@
     "dockerfile": "./Dockerfile",
     "context": "."
   },
-  "postCreateCommand": [
-    "sh -c 'pre-commit install --install-hooks || echo \"pre-commit installation failed\"'",
-    "go install github.com/onsi/ginkgo/v2/ginkgo@latest",
-    "go install golang.org/x/tools/cmd/goimports@latest"
-  ],
+  "postCreateCommand": {
+    "pre-commit": "pre-commit install --install-hooks || echo 'pre-commit installation failed'",
+    "ginkgo": "go install github.com/onsi/ginkgo/v2/ginkgo@latest",
+    "goimports": "go install golang.org/x/tools/cmd/goimports@latest"
+  },
   "features": {
     "ghcr.io/devcontainers-extra/features/act:1": {},
     "ghcr.io/devcontainers-extra/features/devcontainers-cli:1": {},
