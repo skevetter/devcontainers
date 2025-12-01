@@ -101,7 +101,7 @@ test_command_version ginkgo
 
 # Goimports (Go imports formatter)
 test_command_exists goimports
-check_quiet "goimports help works" goimports -h
+check_quiet "goimports can run" goimports /dev/null
 
 #------------------------------------------------------------------------------
 # Permissions and Environment
