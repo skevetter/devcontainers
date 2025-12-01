@@ -1,4 +1,3 @@
 {
-  "image": "ghcr.io/skevetter/devcontainers:latest",
-  "postCreateCommand": ".devcontainer/post_create.sh"
+  "image": "ghcr.io/skevetter/devcontainers:latest"
 }
