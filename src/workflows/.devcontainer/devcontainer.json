@@ -7,8 +7,8 @@
   "postCreateCommand": "pre-commit install --install-hooks || { echo 'pre-commit installation failed'; }",
   "features": {
     "ghcr.io/devcontainers-extra/features/act:1": {},
-    "ghcr.io/devcontainers-extra/features/gh-cli:1": {},
     "ghcr.io/devcontainers-extra/features/pre-commit:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/python:1": {},
     "ghcr.io/skevetter/features/biome:1": {},
     "ghcr.io/skevetter/features/catppuccin:1": {},

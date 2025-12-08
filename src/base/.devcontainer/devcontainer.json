@@ -5,6 +5,7 @@
     "context": "."
   },
   "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/skevetter/features/neovim:1": {},
     "ghcr.io/skevetter/features/shell-history:1": {}
   },
