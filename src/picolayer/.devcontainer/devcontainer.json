@@ -17,7 +17,6 @@
     "vscode": {
       "extensions": [
         "EditorConfig.EditorConfig",
-        "elijah-potter.harper",
         "esbenp.prettier-vscode",
         "GitHub.copilot-chat",
         "GitHub.copilot",
