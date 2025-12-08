@@ -7,7 +7,8 @@
   "postCreateCommand": {
     "pre-commit": "pre-commit install --install-hooks || echo 'pre-commit installation failed'",
     "ginkgo": "go install github.com/onsi/ginkgo/v2/ginkgo@latest",
-    "goimports": "go install golang.org/x/tools/cmd/goimports@latest"
+    "goimports": "go install golang.org/x/tools/cmd/goimports@latest",
+    "rust-permissions": "sudo chown -R vscode:vscode /usr/local/cargo/registry && sudo chmod -R u+w /usr/local/cargo/registry"
   },
   "features": {
     "ghcr.io/devcontainers-extra/features/act:1": {},
