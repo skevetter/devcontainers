@@ -3,6 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/rust:latest",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": { "moby": false },
+    "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/skevetter/features/biome:1": {},
     "ghcr.io/skevetter/features/catppuccin:1": {},
     "ghcr.io/skevetter/features/fzf:1": {},
