@@ -4,7 +4,7 @@
     "dockerfile": "./Dockerfile",
     "context": "."
   },
-  "postCreateCommand": "sh -c 'pre-commit install --install-hooks || echo \"pre-commit installation failed\"'",
+  "postCreateCommand": "sh -c 'pre-commit install --install-hooks || echo \"pre-commit installation failed\"' && sudo chown -R vscode:vscode /usr/local/cargo/registry && sudo chmod -R u+w /usr/local/cargo/registry",
   "features": {
     "ghcr.io/devcontainers-extra/features/act:1": {},
     "ghcr.io/devcontainers-extra/features/cloudflare-wrangler:1": {},

@@ -10,7 +10,7 @@ source test-utils.sh
 #------------------------------------------------------------------------------
 
 echo "==================== Test Environment ===================="
-env | grep -E "(NODE|NPM|DOCKER|GH|PATH|HIST|PRE_COMMIT)" || true
+env | grep -E "(NODE|NPM|DOCKER|GH|RUST|CARGO|PATH|HIST|PRE_COMMIT)" || true
 echo "==========================================================="
 
 #------------------------------------------------------------------------------
@@ -47,6 +47,19 @@ if command -v node >/dev/null 2>&1; then
     test_command_version node
     test_command_version npm
 fi
+
+# Rust
+test_command_exists rustc
+test_command_exists cargo
+test_command_version rustc
+test_command_version cargo
+
+# Rust package download test
+echo "Testing Rust package download and permissions"
+check_quiet "cargo registry access" bash -c 'cargo search serde --limit 1 > /dev/null'
+check_quiet "install rust package" cargo install ripgrep --version 14.1.0
+check_quiet "installed package works" rg --version
+check_quiet "uninstall rust package" cargo uninstall ripgrep
 
 #------------------------------------------------------------------------------
 # DevContainer Tools
