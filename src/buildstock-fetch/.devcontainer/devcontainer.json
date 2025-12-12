@@ -12,7 +12,7 @@
   "remoteEnv": {
     "AWS_REGION": "us-west-2"
   },
-  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH=\"$HOME/.local/bin:$PATH\" && uv sync && uv pip install -e . && uv pip install -e '.[lint]' && echo 'export PATH=\"/workspaces/buildstock-fetch/.venv/bin:$PATH\"' >> ~/.bashrc && git config --global --add safe.directory /workspaces/buildstock-fetch && uv run pre-commit install --install-hooks",
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && export PATH=\"$HOME/.local/bin:$PATH\" && ([ -f pyproject.toml ] && uv sync && uv pip install -e . && uv pip install -e '.[lint]' || true) && echo 'export PATH=\"/workspaces/buildstock-fetch/.venv/bin:$PATH\"' >> ~/.bashrc && git config --global --add safe.directory /workspaces/buildstock-fetch && ([ -f pyproject.toml ] && uv run pre-commit install --install-hooks || true)",
   "customizations": {
     "vscode": {
       "extensions": [
