@@ -13,13 +13,13 @@
     "AWS_REGION": "us-west-2"
   },
   "postCreateCommand": {
-    "install-uv": "curl -LsSf https://astral.sh/uv/install.sh | sh",
-    "install-deps": "uv sync",
-    "install-pkg": "uv pip install -e .",
-    "install-lint-deps": "uv pip install -e \".[lint]\"",
-    "add-venv-to-path": "echo 'export PATH=\"/workspaces/buildstock-fetch/.venv/bin:$PATH\"' >> ~/.bashrc",
-    "setup-pre-commit-hooks": "git config --global --add safe.directory /workspaces/buildstock-fetch",
-    "pre-commit": "uv run pre-commit install --install-hooks"
+    "001-install-uv": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+    "002-install-deps": "uv sync",
+    "003-install-pkg": "uv pip install -e .",
+    "004-install-lint-deps": "uv pip install -e \".[lint]\"",
+    "005-add-venv-to-path": "echo 'export PATH=\"/workspaces/buildstock-fetch/.venv/bin:$PATH\"' >> ~/.bashrc",
+    "006-setup-pre-commit-hooks": "git config --global --add safe.directory /workspaces/buildstock-fetch",
+    "007-pre-commit": "uv run pre-commit install --install-hooks"
   },
   "customizations": {
     "vscode": {
