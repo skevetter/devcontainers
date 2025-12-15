@@ -34,7 +34,7 @@ jobs:
             devpod:
               - './**/devpod/**'
             docker:
-              - './**/docker/**'  
+              - './**/docker/**'
             devcontainers:
               - './**/devcontainers/**'
             picolayer:
