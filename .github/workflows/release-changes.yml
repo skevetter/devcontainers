@@ -33,10 +33,14 @@ jobs:
               - './**/dev-common/**'
             devpod:
               - './**/devpod/**'
+            docker:
+              - './**/docker/**'  
             devcontainers:
               - './**/devcontainers/**'
             picolayer:
               - './**/picolayer/**'
+            workflows:
+              - './**/workflows/**'
 
   test:
     needs: [changes]
