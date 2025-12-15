@@ -17,9 +17,11 @@ jobs:
         template:
           - base
           - dev-common
-          - devpod
           - devcontainers
+          - devpod
+          - docker
           - picolayer
+          - workflows
     steps:
       - uses: actions/checkout@v6
 
