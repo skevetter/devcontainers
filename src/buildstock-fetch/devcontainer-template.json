@@ -1,0 +1,7 @@
+{
+  "id": "buildstock-fetch",
+  "version": "1.0.0",
+  "name": "Buildstock-fetch",
+  "description": "A minimal dev container",
+  "documentationURL": "https://github.com/skevetter/devcontainers/tree/main/src/buildstock-fetch"
+}
