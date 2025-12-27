@@ -12,7 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        templates: [base, dev-common, devcontainers, picolayer]
+        templates:
+          - base
+          - dev-common
+          - devcontainers
+          - devpod
+          - docker
+          - picolayer
+          - workflows
     steps:
       - uses: actions/checkout@v6
 
