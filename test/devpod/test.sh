@@ -112,6 +112,10 @@ test_command_version protoc
 test_command_exists ginkgo
 test_command_version ginkgo
 
+# Task (task runner)
+test_command_exists task
+test_command_version task
+
 # Goimports (Go imports formatter)
 test_command_exists goimports
 check_quiet "goimports can run" goimports /dev/null
@@ -159,6 +163,11 @@ check_quiet "biome format test" bash -c "
 
 # Cleanup
 rm -rf "$TEMP_REPO"
+
+# Check fzf exists in ~/.zshrc
+if [ -f "$HOME/.zshrc" ]; then
+    check_quiet "fzf in .zshrc" grep -q 'fzf' "$HOME/.zshrc"
+fi
 
 #------------------------------------------------------------------------------
 # Report Results
