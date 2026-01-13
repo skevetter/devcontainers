@@ -36,6 +36,13 @@ tasks:
         vars:
           TEMPLATE: devpod
 
+  test:buildstock-fetch:
+    desc: Run smoke tests for buildstock-fetch template
+    cmds:
+      - task: test
+        vars:
+          TEMPLATE: buildstock-fetch
+
   test:all:
     desc: Run smoke tests for all templates
     cmds:
@@ -43,6 +50,7 @@ tasks:
       - task: test:devcontainers
       - task: test:dev-common
       - task: test:devpod
+      - task: test:buildstock-fetch
 
   list:
     desc: List available workflows
