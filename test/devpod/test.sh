@@ -120,6 +120,10 @@ test_command_version task
 test_command_exists goimports
 check_quiet "goimports can run" goimports /dev/null
 
+# Goreleaser (Go release tool)
+test_command_exists goreleaser
+test_command_version goreleaser
+
 #------------------------------------------------------------------------------
 # Permissions and Environment
 #------------------------------------------------------------------------------
