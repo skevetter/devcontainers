@@ -21,7 +21,7 @@ jobs:
           - picolayer
           - workflows
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Smoke test for '${{ matrix.templates }}'
         uses: ./.github/actions/smoke-test
